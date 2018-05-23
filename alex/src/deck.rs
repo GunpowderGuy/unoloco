@@ -1,17 +1,17 @@
-use::card;
+use card;
 
-const size :usize = 52;
+const size: usize = 52;
 
-#[derive(Copy, Clone,Getters)]
+#[derive(Copy, Clone, Getters)]
 pub struct Deck {
-cards : [card::Card;size],
-index : usize, // numero de cartas que han sido repartidas
+    cards: [card::Card; size],
+    index: usize, // numero de cartas que han sido repartidas
 }
 
 impl Deck {
-fn size(&self) -> usize {
-return size - self.index;
-}
+    fn size(&self) -> usize {
+        return size - self.index;
+    }
 }
 
 // deck() crear e inicializar una serie de cartas

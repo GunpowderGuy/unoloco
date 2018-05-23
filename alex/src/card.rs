@@ -1,4 +1,4 @@
-#[derive(Copy, Clone,PartialEq)]
+#[derive(Copy, Clone, PartialEq)]
 pub enum Suit {
     hearts,
     spades,
@@ -6,19 +6,19 @@ pub enum Suit {
     clubs,
 }
 
-#[derive(Copy, Clone, new,Getters,PartialEq)]
+#[derive(Copy, Clone, new, Getters, PartialEq)]
 pub struct Card {
     tipo: Suit,
-    rank : usize,
+    rank: usize,
 }
 
 impl Card {
     fn getRank(&self) -> usize {
         return self.rank;
-}
-fn getSuit(&self) -> Suit {
-    return self.tipo;
-}
+    }
+    fn getSuit(&self) -> Suit {
+        return self.tipo;
+    }
 }
 
 //rankstring() devuelve el texto (string) del rango de la carta

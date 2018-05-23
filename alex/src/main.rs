@@ -4,10 +4,11 @@ extern crate text_io;
 #[macro_use]
 extern crate derive_new;
 
-#[macro_use] extern crate derive_getters;
+#[macro_use]
+extern crate derive_getters;
 
-mod deck;
 mod card;
+mod deck;
 mod hand;
 
 fn main() {

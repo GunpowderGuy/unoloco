@@ -1,0 +1,1 @@
+/home/diegorosario/Documentos/unoloco/alex/target/rls/debug/libalex-2024dcb96d145e45.rmeta: /home/diegorosario/Documentos/unoloco/alex/src/card.rs /home/diegorosario/Documentos/unoloco/alex/src/deck.rs /home/diegorosario/Documentos/unoloco/alex/src/hand.rs /home/diegorosario/Documentos/unoloco/alex/src/main.rs
