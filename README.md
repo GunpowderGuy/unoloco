@@ -6,4 +6,4 @@ La programacion orientada a objetos se basa en implementar estructuras que no so
 ![Alt text](relative/path/to/grafica.jpg?raw=true "Title")
 
 ![Optional Text](../master/resources/grafica.jpg)
-![Optional Text](../master/myFolder/unodeck.png)
+![Optional Text](../master/resources/unodeck.png)
