@@ -19,11 +19,35 @@ impl Card {
     fn getSuit(&self) -> Suit {
         return self.tipo;
     }
+    fn rankString(&self) -> String {
+        match self.rank {
+            1 => return "one".to_owned(),
+            2 => "two".to_owned(),
+            3 => "three".to_owned(),
+            4 => "four".to_owned(),
+            5 => "five".to_owned(),
+            6 => "six".to_owned(),
+            7 => "seven".to_owned(),
+            8 => "eight".to_owned(),
+            9 => "nine".to_owned(),
+            10 => "ten".to_owned(),
+            11 => "eleven".to_owned(),
+            12 => "twelve".to_owned(),
+            _ => "twelve".to_owned(),
+        }
+    }
+    fn suitString(&self) -> &str {
+        match self.tipo {
+            hearts => "hearts",     //.to_owned(),
+            spades => "spades",     //.to_owned(),
+            diamonds => "diamonds", //.to_owned(),
+            clubs => "clubs",       //.to_owned(),
+        }
+    }
+    fn toString(&self) -> String {
+        return self.rankString() + self.suitString();
+    }
 }
-
-//rankstring() devuelve el texto (string) del rango de la carta
-//suitString() convierte suit a un string
-// toString() devuelve rankString() + suitString()
 
 //use std::ops::Add;
 //impl PartialEq for Card {
