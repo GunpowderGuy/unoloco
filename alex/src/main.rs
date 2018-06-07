@@ -7,6 +7,8 @@ extern crate derive_new;
 #[macro_use]
 extern crate derive_getters;
 
+extern crate rand;
+
 mod card;
 mod deck;
 mod hand;

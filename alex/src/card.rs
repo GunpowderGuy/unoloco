@@ -8,8 +8,8 @@ pub enum Suit {
 
 #[derive(Copy, Clone, new, Getters, PartialEq)]
 pub struct Card {
-    tipo: Suit,
-    rank: usize,
+    pub tipo: Suit,
+    pub rank: usize,
 }
 
 impl Card {
