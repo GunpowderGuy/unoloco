@@ -24,7 +24,7 @@ impl Deck {
         for i in 0..(size - self.index) {
             if (i != numeroCarta) {
                 self.cards[i + offset] = backupCards[i]
-            } else if i(i != numeroCarta) {
+            } else if (i != numeroCarta) {
                 offset = 1
             }
         }
