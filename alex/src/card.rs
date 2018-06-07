@@ -36,7 +36,7 @@ impl Card {
             _ => "twelve".to_owned(),
         }
     }
-    fn suitString(&self) -> &str {
+    pub fn suitString(&self) -> &str {
         match self.tipo {
             hearts => "hearts",     //.to_owned(),
             spades => "spades",     //.to_owned(),

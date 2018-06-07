@@ -22,12 +22,12 @@ impl Deck {
         let backupCards = self.cards; //: [card::Card; size];
         let mut offset = 0;
         for i in 0..(size - self.index) {
-            if (i != numeroCarta) {
-                self.cards[i + offset] = backupCards[i]
-            } else if (i != numeroCarta) {
+            if i != numeroCarta {
+                self.cards[i] = backupCards[i + offset]
+            } else if i != numeroCarta {
                 offset = 1
             }
+            backupCards[numeroCarta];
         }
     }
 }
-// dealcard() remover una carta para darsela a un jugador
