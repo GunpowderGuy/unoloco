@@ -21,4 +21,7 @@ fn main() {
     , el numero ingresado fue {}",
         i
     );
+
+    let numCards = 5;
+    p1 = hand::Hand::new();
 }

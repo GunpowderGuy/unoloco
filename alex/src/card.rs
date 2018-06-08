@@ -1,9 +1,25 @@
+use rand::prelude::*;
+
 #[derive(Copy, Clone, PartialEq)]
 pub enum Suit {
     hearts,
     spades,
     diamonds,
     clubs,
+}
+impl Suit {
+    fn fromNumber(self, input: usize) -> Self {
+        match input {
+            1 => Suit::hearts,
+            2 => Suit::spades,
+            3 => Suit::diamonds,
+            4 => Suit::clubs,
+        }
+    }
+    fn random(self) -> Self {
+        let mut rng = thread_rng();
+        self.fromNumber(rng.gen_range(1, 4))
+    }
 }
 
 #[derive(Copy, Clone, new, Getters, PartialEq)]
@@ -46,6 +62,14 @@ impl Card {
     }
     fn toString(&self) -> String {
         return self.rankString() + self.suitString();
+    }
+    fn generateCard(&self) -> Self {
+        let mut rng = thread_rng();
+        let this = Card {
+            tipo: Suit.random(),
+            rank: rng.gen_range(0, 10),
+        };
+        return this;
     }
 }
 
