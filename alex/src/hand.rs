@@ -42,3 +42,16 @@ impl Hand {
         self.hand.remove(targetCard);
     }
 }
+
+pub fn generate() -> Hand {
+    //    let retorno = Hand::new("self", card::Card { card::Card.generateCard()});
+    let mut mistack = Vec::new();
+    for i in 0..8 {
+        let card = card::generate();
+        mistack.push(card);
+    }
+    return Hand {
+        name: "slef".to_string(),
+        hand: mistack,
+    };
+}

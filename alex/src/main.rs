@@ -14,7 +14,7 @@ mod deck;
 mod hand;
 
 fn main() {
-    let i: i32 = read!();
+    let i: usize = read!();
 
     println!(
         "ejemplo de input y output
@@ -23,5 +23,5 @@ fn main() {
     );
 
     let numCards = 5;
-    p1 = hand::Hand::new();
+    let p1 = hand::generate();
 }

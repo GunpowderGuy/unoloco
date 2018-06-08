@@ -18,16 +18,28 @@ impl Deck {
             self.cards[i].tipo = card::Suit::diamonds;
         }
     }
-    fn dealcard(&mut self, numeroCarta: usize) {
+    fn dealcard(&mut self, numeroCarta: usize) -> card::Card {
         let backupCards = self.cards; //: [card::Card; size];
         let mut offset = 0;
+
         for i in 0..(size - self.index) {
             if i != numeroCarta {
                 self.cards[i] = backupCards[i + offset]
             } else if i != numeroCarta {
                 offset = 1
             }
-            backupCards[numeroCarta];
         }
+        self.index = self.index + 1; // incrementar el numeroCartas repartidas
+        return backupCards[numeroCarta];
     }
+}
+
+pub fn generate() -> Deck {
+    //    let retorno = Hand::new("self", card::Card { card::Card.generateCard()});
+    let mut mistack: [card::Card; size] = [card::generate(); size];
+
+    return Deck {
+        index: 0,
+        cards: mistack,
+    };
 }

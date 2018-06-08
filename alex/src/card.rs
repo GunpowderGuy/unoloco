@@ -7,20 +7,6 @@ pub enum Suit {
     diamonds,
     clubs,
 }
-impl Suit {
-    fn fromNumber(self, input: usize) -> Self {
-        match input {
-            1 => Suit::hearts,
-            2 => Suit::spades,
-            3 => Suit::diamonds,
-            4 => Suit::clubs,
-        }
-    }
-    fn random(self) -> Self {
-        let mut rng = thread_rng();
-        self.fromNumber(rng.gen_range(1, 4))
-    }
-}
 
 #[derive(Copy, Clone, new, Getters, PartialEq)]
 pub struct Card {
@@ -49,7 +35,7 @@ impl Card {
             10 => "ten".to_owned(),
             11 => "eleven".to_owned(),
             12 => "twelve".to_owned(),
-            _ => "twelve".to_owned(),
+            _ => "invalido".to_owned(),
         }
     }
     pub fn suitString(&self) -> &str {
@@ -63,20 +49,24 @@ impl Card {
     fn toString(&self) -> String {
         return self.rankString() + self.suitString();
     }
-    fn generateCard(&self) -> Self {
-        let mut rng = thread_rng();
-        let this = Card {
-            tipo: Suit.random(),
-            rank: rng.gen_range(0, 10),
-        };
-        return this;
-    }
 }
 
-//use std::ops::Add;
-//impl PartialEq for Card {
-//type Output = bool;
-//fn PartialEq(&self,dos :Card) -> bool {
-//if dos.tipo == self tipo
-//}
-//}en vez de implementar == para card lo voy a derivar
+pub fn generate() -> Card {
+    // antes estaba como metodo , eso no funcionaba
+    let mut rng = thread_rng();
+    let mut retornar;
+
+    match rng.gen_range(1, 4) {
+        1 => retornar = Suit::hearts,
+        2 => retornar = Suit::spades,
+        3 => retornar = Suit::diamonds,
+        4 => retornar = Suit::clubs,
+        _ => retornar = Suit::clubs,
+    }
+
+    let this = Card {
+        tipo: retornar, // Suit.random(),
+        rank: rng.gen_range(0, 12),
+    };
+    return this;
+}
